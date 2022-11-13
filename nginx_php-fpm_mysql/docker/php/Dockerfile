@@ -1,10 +1,10 @@
 FROM php:8.1.12-fpm-alpine
 
-# # install configure file
-# RUN cp /usr/local/etc/php/php.ini-production /usr/local/etc/php/php.ini
+RUN apk update && \
+    apk add --no-cache tzdata && \
+    cp /usr/share/zoneinfo/Asia/Tokyo /etc/localtime && \
+    echo "Asia/Tokyo" > /etc/timezone && \
+    apk del tzdata
+RUN docker-php-ext-install -j$(nproc) pdo_mysql bcmath 
 
-# # settings
-# COPY settings/php.ini /usr/local/etc/php/conf.d/php.ini
-
-# # app sources
-# COPY src /usr/share/nginx/html
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
