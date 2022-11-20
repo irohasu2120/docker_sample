@@ -3,6 +3,8 @@
 ## 概要
 Nginx, PHP-fpm, MySQLの連携をしたDocker-compose
 
+PHPにはLaravelを使用。
+
 ### コマンド
 #### 起動
 ```sh
@@ -19,26 +21,26 @@ docker-compose down
 docker-compose exec {コンテナ名} sh
 ```
 
-##### Larabelトップ画面
+##### Laravelトップ画面
 ```
 http://localhost:8080
 ```
 
 ##### 開発ナレッジ
-* Larabelでcreate-projectしたい
-  * /app以下を削除して、phpコンテナーから以下のコマンドを実行。
+* Laravelでcreate-projectしたい
+  * /backoffice以下を削除して、phpコンテナーから以下のコマンドを実行。
   ```sh
   [] cd /var/www/html
   [] composer create-project --prefer-dist "laravel/laravel=8" .
   ```
 
-* Lravelのenvが反映されない
+* Laravelのenvが反映されない
   * キャッシュクリア
   ```sh
   php artisan cache:clear
   ```
 
-* Larabelの画面を開こうとしたらPermission deniedって出る
+* Laravelの画面を開こうとしたらPermission deniedって出る
   * 暫定措置
   ```sh
   chown -R www-data:www-data /var/www/html/storage
