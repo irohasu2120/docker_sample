@@ -31,7 +31,7 @@ http://localhost:8080
   * /backoffice以下を削除して、phpコンテナーから以下のコマンドを実行。
   ```sh
   [] cd /var/www/html
-  [] composer create-project --prefer-dist "laravel/laravel=8" .
+  [] composer create-project laravel/laravel=8 --prefer-dist backoffice
   ```
 
 * Laravelのenvが反映されない
