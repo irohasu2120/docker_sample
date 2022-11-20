@@ -1,4 +1,4 @@
-FROM php:8.1.12-fpm-alpine
+FROM php:7.4-fpm-alpine
 
 RUN apk update && \
     apk add --no-cache tzdata unzip && \
@@ -8,5 +8,3 @@ RUN apk update && \
 RUN docker-php-ext-install -j$(nproc) pdo_mysql bcmath 
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-
-RUN chown -R www-data:www-data /var/www/html/storage

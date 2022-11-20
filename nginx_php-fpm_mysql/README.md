@@ -29,7 +29,13 @@ http://localhost:8080
   * /app以下を削除して、phpコンテナーから以下のコマンドを実行。
   ```sh
   [] cd /var/www/html
-  [] composer create-project --prefer-dist "laravel/laravel=9.3.10" .
+  [] composer create-project --prefer-dist "laravel/laravel=8" .
+  ```
+
+* Lravelのenvが反映されない
+  * キャッシュクリア
+  ```sh
+  php artisan cache:clear
   ```
 
 * Larabelの画面を開こうとしたらPermission deniedって出る
