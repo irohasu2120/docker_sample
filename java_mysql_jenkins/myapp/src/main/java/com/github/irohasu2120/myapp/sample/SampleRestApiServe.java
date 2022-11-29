@@ -1,6 +1,6 @@
-package jp.irohasu2120.myapp.sample;
+package com.github.irohasu2120.myapp.sample;
 
-import jp.irohasu2120.myapp.sample.dto.Person;
+import com.github.irohasu2120.myapp.sample.dto.Person;
 
 /**
  * サンプルService

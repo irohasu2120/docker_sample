@@ -1,4 +1,4 @@
-package jp.irohasu2120.myapp;
+package com.github.irohasu2120.myapp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

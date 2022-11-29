@@ -1,6 +1,7 @@
-package jp.irohasu2120.myapp.sample;
+package com.github.irohasu2120.myapp.sample;
 
-import jp.irohasu2120.myapp.sample.dto.Person;
+import com.github.irohasu2120.myapp.sample.dto.Person;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -20,7 +21,7 @@ class SampleRestApiServiceImplTest {
         @ParameterizedTest
         @CsvSource({"1, Tanaka", "100, Yamada"})
         void doProcess(String id, String name) {
-            assertEquals(sampleRestApiServe.doProcess(id), new Person(id, name));
+            Assertions.assertEquals(sampleRestApiServe.doProcess(id), new Person(id, name));
         }
     }
 }

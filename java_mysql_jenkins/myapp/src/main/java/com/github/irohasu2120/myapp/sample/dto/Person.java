@@ -1,4 +1,4 @@
-package jp.irohasu2120.myapp.sample.dto;
+package com.github.irohasu2120.myapp.sample.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
