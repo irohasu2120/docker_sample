@@ -1,5 +1,6 @@
 package com.github.irohasu2120.myapp.sample.dto;
 
+import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
@@ -9,8 +10,10 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 public class Person {
-    /** 個人ID */
+
+    @ApiModelProperty(value = "個人ID")
     private String id;
-    /** 個人名 */
+
+    @ApiModelProperty(value = "個人名")
     private String name;
 }
