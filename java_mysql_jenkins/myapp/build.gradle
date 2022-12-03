@@ -2,6 +2,7 @@ plugins {
 	id 'java'
 	id 'org.springframework.boot' version '2.5.14'// これ以上バージョン上げるとswagger動かない
 	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+	id 'org.flywaydb.flyway' version '8.0.0'
 }
 
 group = 'com.github.irohasu2120'
@@ -18,12 +19,22 @@ repositories {
 	mavenCentral()
 }
 
+flyway {
+	driver = 'com.mysql.cj.jdbc.Driver'
+	url = 'jdbc:mysql://localhost:3306/sampledb?characterEncoding=utf-8'
+	user = 'sample_user'
+	password = 'sample_user'
+}
+
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
 	implementation 'javax.xml.bind:jaxb-api:2.3.1'// これ入れないとswaggerが動かない
 	implementation 'io.springfox:springfox-swagger2:2.8.0'
 	implementation 'io.springfox:springfox-swagger-ui:2.8.0'
 	implementation 'org.apache.commons:commons-lang3:3.12.0'
+	implementation 'com.mysql:mysql-connector-j:8.0.31'
+	implementation 'org.flywaydb:flyway-mysql:8.2.2'
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
