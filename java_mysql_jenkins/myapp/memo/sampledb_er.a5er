@@ -1,0 +1,184 @@
+﻿# A5:ER FORMAT:16
+# A5:ER ENCODING:UTF8
+# A5:ER Mk-1 Copyright © 2007 m.matsubara
+# A5:SQL Mk-2 Version 2.17.4 Copyright © 1997 - 2022 m.matsubara
+#  https://a5m2.mmatsubara.com
+
+[Manager]
+ProjectName=SampleDB
+Author=
+MaxEntityRowShow=1000
+ReadOnlyRecommend=0
+Page=Main
+PageInfo="Main",2,"A3Landscape",$FFFFFF
+Domain=予約ID=BIGINT
+DomainInfo="予約ID","BIGINT","",""
+Domain=授業ID=BIGINT
+DomainInfo="授業ID","BIGINT","",""
+Domain=学生ID=BIGINT
+DomainInfo="学生ID","BIGINT","",""
+Domain=予約ステータス=VARCHAR(1)
+DomainInfo="予約ステータス","VARCHAR(1)","",""
+Domain=授業名=VARCHAR(20)
+DomainInfo="授業名","VARCHAR(20)","",""
+Domain=公開開始日=DATE
+DomainInfo="公開開始日","DATE","",""
+Domain=公開終了日=DATE
+DomainInfo="公開終了日","DATE","",""
+Domain=姓=VARCHAR(15)
+DomainInfo="姓","VARCHAR(15)","",""
+Domain=名=VARCHAR(15)
+DomainInfo="名","VARCHAR(15)","",""
+Domain=姓カナ=VARCHAR(15)
+DomainInfo="姓カナ","VARCHAR(15)","",""
+Domain=名カナ=VARCHAR(15)
+DomainInfo="名カナ","VARCHAR(15)","",""
+Domain=性別=VARCHAR(1)
+DomainInfo="性別","VARCHAR(1)","",""
+Domain=性別備考=VARCHAR(20)
+DomainInfo="性別備考","VARCHAR(20)","",""
+Domain=誕生日=DATE
+DomainInfo="誕生日","DATE","",""
+LogicalView=1
+DecodeDomain=0
+ViewModePageIndividually=1
+ViewMode=2
+ViewFormat=0
+UseNondependenceDashLine=0
+FontName=PlemolJP
+FontSize=10
+PaperSize=A4Landscape
+HeaderLeft=
+HeaderCenter=
+HeaderRight=
+FooterLeft=
+FooterCenter=
+FooterRight=
+ShowPageoutRelation=1
+RDBMSType=5
+RDBMSTypeName=MySQL
+GenerateDropTableStatement=1
+DropTableIfExists=1
+BackupRestoreTempTable=0
+CommonField="登録者","create_name","VARCHAR(20)",,,"","",$FFFFFFFF
+CommonField="登録日時","create_datetime","DATETIME",,,"","",$FFFFFFFF
+CommonField="更新者","update_name","VARCHAR(20)",,,"","",$FFFFFFFF
+CommonField="更新日時","update_datetime","DATETIME",,,"","",$FFFFFFFF
+CommonField="削除フラグ","delete_flag","VARCHAR(1)",,,"","",$FFFFFFFF
+DefaultPkName=%0:s_PKC
+DefaultPkIndexName=%0:s_PKI
+DefaultIndexName=%0:s_IX%1:d
+DefaultFkName=%0:s_FK%1:d
+SqlSeparator=0
+UpperCaseKeyword=0
+ShowTag=1
+ShowCommonAttributes=0
+BugFixEntityWidth=1
+
+[Entity]
+PName=reserve
+LName=予約
+Comment=
+TableOption=
+Page=MAIN
+Left=150
+Top=200
+Field="予約ID","reserve_id","*予約ID","NOT NULL",0,"","",$FFFFFFFF,""
+Field="授業ID","lesson_id","*授業ID","NOT NULL",1,"","",$FFFFFFFF,""
+Field="学生ID","student_id","*学生ID","NOT NULL",2,"","",$FFFFFFFF,""
+Field="予約ステータス","status","*予約ステータス","NOT NULL",,"","",$FFFFFFFF,""
+EffectMode=None
+Tag=トランザクション
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20221203163422
+Position="MAIN",150,200,344,422
+ZOrder=1
+
+[Entity]
+PName=student
+LName=学生
+Comment=
+TableOption=
+Page=MAIN
+Left=700
+Top=250
+Field="学生ID","student_id","*学生ID","NOT NULL",0,"","",$FFFFFFFF,""
+Field="姓","famaily_name","*姓","NOT NULL",,"","",$FFFFFFFF,""
+Field="名","first_name","*名","NOT NULL",,"","",$FFFFFFFF,""
+Field="姓カナ","famaily_name_kana","*姓カナ","NOT NULL",,"","",$FFFFFFFF,""
+Field="名カナ","first_name_kana","*名カナ","NOT NULL",,"","",$FFFFFFFF,""
+Field="性別","gender","*性別","NOT NULL",,"","",$FFFFFFFF,""
+Field="性別備考","gender_memo","*性別備考",,,"","",$FFFFFFFF,""
+Field="誕生日","birth_day","*誕生日","NOT NULL",,"","",$FFFFFFFF,""
+EffectMode=None
+Tag=トランザクション
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20221203163749
+Position="MAIN",700,250
+ZOrder=2
+
+[Entity]
+PName=lesson
+LName=授業
+Comment=
+TableOption=
+Page=MAIN
+Left=550
+Top=900
+Field="授業ID","lesson_id","*授業ID","NOT NULL",0,"","",$FFFFFFFF,""
+Field="授業名","lesson_name","*授業名","NOT NULL",,"","",$FFFFFFFF,""
+Field="公開開始日","open_date","*公開開始日","NOT NULL",,"","",$FFFFFFFF,""
+Field="公開終了日","close_date","*公開終了日","NOT NULL",,"","",$FFFFFFFF,""
+EffectMode=None
+Tag=マスタ
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20221203163235
+Position="MAIN",550,900,381,368
+ZOrder=3
+
+[Relation]
+Entity1=student
+Entity2=reserve
+RelationType1=2
+RelationType2=3
+Fields1=student_id
+Fields2=student_id
+Cardinarity1=
+Cardinarity2=
+Position="MAIN",0,1618,8382,1650,R,R,""
+Dependence=1
+Caption=
+PName=
+ModifiedDateTime=20221203163438
+LineMode=0
+Bar1=162
+Bar2=838
+Bar3=165
+TermPos1=R
+TermPos2=R
+ZOrder=4
+
+[Relation]
+Entity1=lesson
+Entity2=reserve
+RelationType1=2
+RelationType2=3
+Fields1=lesson_id
+Fields2=lesson_id
+Cardinarity1=
+Cardinarity2=
+Position="MAIN",0,871,5243,2274,R,R,""
+Dependence=1
+Caption=
+PName=
+ModifiedDateTime=20221203163442
+LineMode=0
+Bar1=87
+Bar2=524
+Bar3=227
+TermPos1=R
+TermPos2=R
+ZOrder=5
