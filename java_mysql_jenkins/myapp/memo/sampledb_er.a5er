@@ -182,3 +182,23 @@ Bar3=227
 TermPos1=R
 TermPos2=R
 ZOrder=5
+
+[Entity]
+PName=sample_t
+LName=サンプル
+Comment=
+TableOption=
+Page=Main
+Left=1450
+Top=450
+Field="サンプルID","sample_id","BIGINT","NOT NULL",0,"","",$FFFFFFFF,""
+Field="サンプル名","sample_name","VARCHAR(20)",,,"","",$FFFFFFFF,""
+Field="サンプル日","sample_date","DATE",,,"","",$FFFFFFFF,""
+Field="サンプル日時","sample_datetime","DATETIME",,,"","",$FFFFFFFF,""
+EffectMode=None
+Tag=トランザクション
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20221203195338
+Position="Main",1450,450
+ZOrder=6

@@ -1,8 +1,24 @@
 -- Project Name : SampleDB
--- Date/Time    : 2022/12/03 16:37:58
+-- Date/Time    : 2022/12/03 19:53:48
 -- Author       : halo1
 -- RDBMS Type   : MySQL
 -- Application  : A5:SQL Mk-2
+
+-- サンプル
+drop table if exists sample_t cascade;
+
+create table sample_t (
+  sample_id BIGINT not null comment 'サンプルID'
+  , sample_name VARCHAR(20) comment 'サンプル名'
+  , sample_date DATE comment 'サンプル日'
+  , sample_datetime DATETIME comment 'サンプル日時'
+  , create_name VARCHAR(20) comment '登録者'
+  , create_datetime DATETIME comment '登録日時'
+  , update_name VARCHAR(20) comment '更新者'
+  , update_datetime DATETIME comment '更新日時'
+  , delete_flag VARCHAR(1) comment '削除フラグ'
+  , constraint sample_t_PKC primary key (sample_id)
+) comment 'サンプル' ;
 
 -- 授業
 drop table if exists lesson cascade;
