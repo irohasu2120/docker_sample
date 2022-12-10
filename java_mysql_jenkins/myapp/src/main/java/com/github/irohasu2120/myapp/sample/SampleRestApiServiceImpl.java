@@ -22,7 +22,7 @@ public class SampleRestApiServiceImpl implements SampleRestApiServe {
         if (sample_t != null) {
             return new Person(String.valueOf(sample_t.getSampleId()), sample_t.getSampleName());
         } else {
-            return new Person("999", "データ無し君");
+            return new Person(id, "データ無し君");
         }
     }
 }
