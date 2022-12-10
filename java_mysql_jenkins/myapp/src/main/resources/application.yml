@@ -11,4 +11,5 @@ spring:
 #  password: sample_user
 mybatis:
   configuration:
+    # SQLスネークケースとJavaキャメルケースのマッピング有効可否
     map-underscore-to-camel-case: true
