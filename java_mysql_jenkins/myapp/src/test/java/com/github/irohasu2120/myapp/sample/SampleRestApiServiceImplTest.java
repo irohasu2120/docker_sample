@@ -17,9 +17,9 @@ class SampleRestApiServiceImplTest {
     @Nested
     class Success {
         @ParameterizedTest
-        @CsvSource({"1, Tanaka", "100, Yamada"})
+        @CsvSource({"1, サンプル君", "100, データ無し君"})
         void doProcess(String id, String name) {
-            Assertions.assertEquals(sampleRestApiServe.doProcess(id), new Person(id, name));
+            Assertions.assertEquals(new Person(id, name), sampleRestApiServe.doProcess(id));
         }
     }
 }
