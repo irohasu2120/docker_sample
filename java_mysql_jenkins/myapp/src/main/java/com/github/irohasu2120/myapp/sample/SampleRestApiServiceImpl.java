@@ -7,9 +7,11 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Log4j2
 @Service
-public class SampleRestApiServiceImpl implements SampleRestApiServe {
+public class SampleRestApiServiceImpl implements SampleRestApiService {
 
     @Autowired
     private SampleCustomRepository sampleCustomRepository;
@@ -17,9 +19,11 @@ public class SampleRestApiServiceImpl implements SampleRestApiServe {
     /** {@inheritDoc}  */
     @Override
     public Person doProcess(String id) {
-        Sample_T sample_t = sampleCustomRepository.findById(Integer.parseInt(id));
+        Optional<Sample_T> op_sample_t = sampleCustomRepository.findById(Integer.parseInt(id));
         log.info("ログ出てるね");
-        if (sample_t != null) {
+
+        if (op_sample_t.isPresent()) {
+            Sample_T sample_t = op_sample_t.get();
             return new Person(String.valueOf(sample_t.getSampleId()), sample_t.getSampleName());
         } else {
             return new Person(id, "データ無し君");

@@ -13,7 +13,7 @@ public class SampleRestApiController {
 
     // サンプルサービス
     @Autowired
-    private SampleRestApiServe sampleRestApiServe;
+    private SampleRestApiService sampleRestApiService;
 
     /**
      * Getリクエストサンプル
@@ -24,6 +24,6 @@ public class SampleRestApiController {
     @GetMapping("/sample/get-persons/{id}")
     @ApiOperation(value = "APIの概要を記載。", notes = "より詳細なAPIの説明を記載。")
     public Person doGet(@PathVariable("id") @ApiParam("個人ID") String id) {
-        return sampleRestApiServe.doProcess(id);
+        return sampleRestApiService.doProcess(id);
     }
 }

@@ -8,7 +8,7 @@
             </PatternLayout>
         </Console>
         <!-- ログファイル出力設定 -->
-        <File name="LogFile" fileName="./logs/demo.log">
+        <File name="LogFile" fileName="./logs/application.log">
             <PatternLayout charset="utf-8">
                 <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n</pattern>
             </PatternLayout>

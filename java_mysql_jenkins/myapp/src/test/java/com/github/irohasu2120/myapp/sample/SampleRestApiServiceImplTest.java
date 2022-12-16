@@ -12,14 +12,14 @@ import org.springframework.boot.test.context.SpringBootTest;
 class SampleRestApiServiceImplTest {
 
     @Autowired
-    SampleRestApiServe sampleRestApiServe;
+    SampleRestApiService sampleRestApiService;
 
     @Nested
     class Success {
         @ParameterizedTest
         @CsvSource({"1, サンプル君", "100, データ無し君"})
         void doProcess(String id, String name) {
-            Assertions.assertEquals(new Person(id, name), sampleRestApiServe.doProcess(id));
+            Assertions.assertEquals(new Person(id, name), sampleRestApiService.doProcess(id));
         }
     }
 }

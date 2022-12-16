@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/sampledb
+    username: sample_user
+    password: sample_user
+    initialization-mode: always
+#flyway:
+#  url: jdbc:mysql://localhost:3306/sampledb
+#  user: sample_user
+#  password: sample_user
+mybatis:
+  configuration:
+    # SQLスネークケースとJavaキャメルケースのマッピング有効可否
+    map-underscore-to-camel-case: true
