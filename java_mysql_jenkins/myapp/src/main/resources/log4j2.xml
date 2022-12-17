@@ -18,7 +18,8 @@
         <!-- コンソールとファイルにログ出力をするための設定 -->
         <Logger name="com.github.irohasu2120.myapp" level="debug" additivity="false">
             <AppenderRef ref="Console"/>
-            <AppenderRef ref="LogFile"/>
+            <!-- ログファイルにも出力する場合はコメントアウト解除 -->
+<!--            <AppenderRef ref="LogFile"/>-->
         </Logger>
     </Loggers>
 </Configuration>

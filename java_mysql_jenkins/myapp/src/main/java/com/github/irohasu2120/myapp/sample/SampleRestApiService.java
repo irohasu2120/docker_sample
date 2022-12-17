@@ -11,5 +11,5 @@ public interface SampleRestApiService {
      * @param id id
      * @return Persion
      */
-    public Person doProcess(String id);
+    Person doProcess(String id);
 }
