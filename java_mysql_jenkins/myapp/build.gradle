@@ -13,6 +13,7 @@ configurations {
 	compileOnly {
 		extendsFrom annotationProcessor
 	}
+	all*.exclude module : 'spring-boot-starter-logging' // デフォルトでlogbackが入るので依存性対象外にする
 }
 
 repositories {
@@ -29,6 +30,8 @@ flyway {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+	implementation 'org.springframework.boot:spring-boot-starter-log4j2'
+	implementation 'org.springframework.boot:spring-boot-devtools'
 	implementation 'javax.xml.bind:jaxb-api:2.3.1'// これ入れないとswaggerが動かない
 	implementation 'io.springfox:springfox-swagger2:2.8.0'
 	implementation 'io.springfox:springfox-swagger-ui:2.8.0'

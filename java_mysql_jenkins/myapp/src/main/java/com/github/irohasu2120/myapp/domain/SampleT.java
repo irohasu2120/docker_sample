@@ -1,12 +1,19 @@
 package com.github.irohasu2120.myapp.domain;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.ToString;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
+/**
+ * サンプルTドメイン
+ */
 @Data
-public class Sample_T {
+@ToString(callSuper = true)
+@AllArgsConstructor
+public class SampleT extends BaseSingleDomain {
     // サンプルID
     private int sampleId;
 
@@ -18,19 +25,4 @@ public class Sample_T {
 
     // サンプル日時
     private LocalDateTime sampleDatetime;
-
-    // 登録者
-    private String create_name;
-
-    // 登録日時
-    private LocalDateTime create_datetime;
-
-    // 更新者
-    private String update_name;
-
-    // 更新日時
-    private LocalDateTime update_datetime;
-
-    // 削除フラグ
-    private String delete_flag;
 }

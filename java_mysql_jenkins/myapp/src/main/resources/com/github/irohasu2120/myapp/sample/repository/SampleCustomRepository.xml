@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.github.irohasu2120.myapp.sample.repository.SampleCustomRepository">
-    <select id="findById" resultType="com.github.irohasu2120.myapp.domain.Sample_T">
+    <select id="findById" resultType="com.github.irohasu2120.myapp.domain.SampleT">
         SELECT * FROM sample_t WHERE sample_id = #{sampleId}
     </select>
 </mapper>

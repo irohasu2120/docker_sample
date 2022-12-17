@@ -5,11 +5,11 @@ import com.github.irohasu2120.myapp.sample.dto.Person;
 /**
  * サンプルService
  */
-public interface SampleRestApiServe {
+public interface SampleRestApiService {
     /**
      * サンプルメソッド
      * @param id id
      * @return Persion
      */
-    public Person doProcess(String id);
+    Person doProcess(String id);
 }
