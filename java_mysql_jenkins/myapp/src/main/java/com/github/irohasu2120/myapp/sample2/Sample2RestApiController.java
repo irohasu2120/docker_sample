@@ -1,6 +1,6 @@
 package com.github.irohasu2120.myapp.sample2;
 
-import com.github.irohasu2120.myapp.BaseRestApiController;
+import com.github.irohasu2120.myapp.common.base.BaseRestApiController;
 import com.github.irohasu2120.myapp.common.base.BaseRestResponse;
 import com.github.irohasu2120.myapp.sample2.dto.Sample2RestApiInDto;
 import com.github.irohasu2120.myapp.sample2.dto.Sample2RestApiOutDto;

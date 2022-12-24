@@ -1,6 +1,6 @@
 package com.github.irohasu2120.myapp.sample;
 
-import com.github.irohasu2120.myapp.BaseRestApiController;
+import com.github.irohasu2120.myapp.common.base.BaseRestApiController;
 import com.github.irohasu2120.myapp.common.base.BaseRestResponse;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;

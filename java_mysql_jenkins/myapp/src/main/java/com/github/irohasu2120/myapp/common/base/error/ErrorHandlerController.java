@@ -16,7 +16,8 @@ public class ErrorHandlerController {
     @ExceptionHandler({AccessDeniedException.class})
     @ResponseStatus(HttpStatus.FORBIDDEN)
     public ErrorRestResponse handleException(AccessDeniedException e) {
-        log.error("Error:{}", e.getMessage());
+        log.error("Error:{}", e.getMessage(), e);
+        log.error(e);
         List<ErrorResponse> errors = List.of(new ErrorResponse(ErrorCodeConstants.COMMON_ERROR.getCode(), "The request was not authorized."));
         var errorRestResponse = new ErrorRestResponse();
         errorRestResponse.setErrors(errors);
@@ -26,7 +27,8 @@ public class ErrorHandlerController {
     @ExceptionHandler({Exception.class})
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public ErrorRestResponse handleException(Exception e) {
-        log.error("Error:{}", e.getMessage());
+//        log.error(e);
+        log.error("Error:{}", e.getMessage(), e);
         List<ErrorResponse> errors = List.of(new ErrorResponse(ErrorCodeConstants.COMMON_ERROR.getCode(), "SYSTEM ERROR!"));
         var errorRestResponse = new ErrorRestResponse();
         errorRestResponse.setErrors(errors);
