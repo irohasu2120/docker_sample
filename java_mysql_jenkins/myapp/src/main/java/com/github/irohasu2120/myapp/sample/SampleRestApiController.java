@@ -1,6 +1,6 @@
 package com.github.irohasu2120.myapp.sample;
 
-import com.github.irohasu2120.myapp.BaseRestApiController;
+import com.github.irohasu2120.myapp.common.base.BaseRestApiController;
 import com.github.irohasu2120.myapp.common.base.BaseRestResponse;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -29,7 +29,7 @@ public class SampleRestApiController extends BaseRestApiController {
         var innerResponse = new SampleRestApiInnerResponse();
 
         innerResponse.setPerson(sampleRestApiService.doProcess(id));
-        response.setResponse(innerResponse);
+        response.setRes(innerResponse);
 
         return response;
     }

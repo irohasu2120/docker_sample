@@ -14,15 +14,15 @@ import java.time.LocalDateTime;
 @ToString(callSuper = true)
 @AllArgsConstructor
 public class SampleT extends BaseSingleDomain {
-    // サンプルID
+    /** サンプルID */
     private int sampleId;
 
-    // サンプル名
+    /** サンプル名 */
     private String sampleName;
 
-    // サンプル日
+    /** サンプル日 */
     private LocalDate sampleDate;
 
-    // サンプル日時
+    /** サンプル日時 */
     private LocalDateTime sampleDatetime;
 }
