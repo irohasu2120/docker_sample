@@ -28,8 +28,7 @@ public class Sample2RestApiController extends BaseRestApiController {
     @ResponseBody
     public BaseRestResponse doPost(@RequestBody Sample2RestApiRequest request) {
         log.debug(request);
-        ModelMapper mapper = new ModelMapper();
-
+        var mapper = new ModelMapper();
         var response = new Sample2RestApiResponse();
         var innerResponse = new Sample2RestApiInnerResponse();
 
@@ -38,10 +37,6 @@ public class Sample2RestApiController extends BaseRestApiController {
         Sample2RestApiOutDto outDto = sample2RestApiService.doProcess(inDto);
 
         mapper.map(outDto, innerResponse);
-
-//        innerResponse.setId(req.getReq().getId());
-//        innerResponse.setName(req.getReq().getName());
-//        innerResponse.setTestFlag(req.getReq().isTestFlag());
 
         response.setRes(innerResponse);
 

@@ -10,7 +10,7 @@ public class Sample2RestApiServiceImpl implements Sample2RestApiService {
     @Override
     public Sample2RestApiOutDto doProcess(Sample2RestApiInDto inDto) {
         var outDto = new Sample2RestApiOutDto();
-        ModelMapper mapper = new ModelMapper();
+        var mapper = new ModelMapper();
         mapper.map(inDto, outDto);
         return outDto;
     }
