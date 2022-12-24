@@ -4,6 +4,8 @@ import lombok.Value;
 
 @Value
 public class ErrorResponse {
+    /** エラーコード */
     String errorCode;
+    /** エラーメッセージ */
     String message;
 }

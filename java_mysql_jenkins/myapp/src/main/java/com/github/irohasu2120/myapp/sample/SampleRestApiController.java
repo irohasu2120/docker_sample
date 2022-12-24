@@ -29,7 +29,7 @@ public class SampleRestApiController extends BaseRestApiController {
         var innerResponse = new SampleRestApiInnerResponse();
 
         innerResponse.setPerson(sampleRestApiService.doProcess(id));
-        response.setResponse(innerResponse);
+        response.setRes(innerResponse);
 
         return response;
     }

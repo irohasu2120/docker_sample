@@ -7,6 +7,6 @@ import java.util.List;
 
 @Data
 public abstract class BaseRestResponse {
-    private Object response;
+    private Object res;
     private List<ErrorResponse> errors;
 }
