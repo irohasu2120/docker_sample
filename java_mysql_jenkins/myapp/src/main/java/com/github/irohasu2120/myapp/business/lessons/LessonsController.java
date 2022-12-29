@@ -19,21 +19,20 @@ import org.springframework.web.bind.annotation.RestController;
 public class LessonsController extends BaseRestApiController {
 
     @Autowired
-    private LessonsService lessonsService;
+    private final LessonsService lessonsService;
+
+    @Autowired
+    private final ModelMapper mapper;
 
     @GetMapping("/lessons")
     @ApiOperation(value = "授業一覧取得", notes = "授業の一覧情報を取得")
     @ResponseBody
     public LessonsResponse getLessons() {
-        var mapper = new ModelMapper();
         var response = new LessonsResponse();
-        var innerResponse = new LessonsInnerResponse();
         var inDto = new LessonsServiceInDto();
 
         LessonsServiceOutDto outDto = lessonsService.getLessons(inDto);
-        mapper.map(outDto, innerResponse);
-
-        response.setRes(innerResponse);
+        mapper.map(outDto, response);
 
         return response;
     }

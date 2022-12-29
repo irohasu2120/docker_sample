@@ -37,8 +37,8 @@ public class Sample2RestApiController extends BaseRestApiController {
         Sample2RestApiOutDto outDto = sample2RestApiService.doProcess(inDto);
 
         mapper.map(outDto, innerResponse);
-
-        response.setRes(innerResponse);
+//
+//        response.setRes(innerResponse);
 
         return response;
     }

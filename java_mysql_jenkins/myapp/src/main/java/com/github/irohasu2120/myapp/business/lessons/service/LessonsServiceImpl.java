@@ -22,9 +22,11 @@ public class LessonsServiceImpl implements LessonsService {
     @Autowired
     private final LessonDao lessonDao;
 
+    @Autowired
+    private final ModelMapper mapper;
+
     @Override
     public LessonsServiceOutDto getLessons(LessonsServiceInDto inDto) {
-        var mapper = new ModelMapper();
         var outDto = new LessonsServiceOutDto();
 
         List<Lesson> lessonEntities = findLessons();
