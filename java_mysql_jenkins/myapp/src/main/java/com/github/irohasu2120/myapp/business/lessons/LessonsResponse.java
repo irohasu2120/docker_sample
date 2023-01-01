@@ -3,11 +3,14 @@ package com.github.irohasu2120.myapp.business.lessons;
 
 import com.github.irohasu2120.myapp.business.lessons.service.dto.LessonsRepositoryOutDto;
 import com.github.irohasu2120.myapp.common.base.BaseRestResponse;
-import lombok.Data;
+import lombok.*;
 
 import java.util.List;
 
-@Data
+@Getter
+@Setter
+@ToString
+@EqualsAndHashCode(callSuper = true)
 public class LessonsResponse extends BaseRestResponse {
     /** 授業一覧 */
     private List<LessonsRepositoryOutDto> lessons;
